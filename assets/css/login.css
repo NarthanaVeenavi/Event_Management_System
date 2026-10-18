@@ -1,0 +1,140 @@
+/* =========================================
+   EventFlow Login Page
+   Reuses the shared registration styles
+========================================= */
+
+/* Login form spacing */
+.register-form-wrapper {
+    max-width: 480px;
+}
+
+/* Login heading */
+.register-heading {
+    margin-bottom: 30px;
+}
+
+.register-heading h2 {
+    color: #0F172A;
+    font-weight: 700;
+}
+
+/* Space between login fields */
+.register-form .form-field {
+    margin-bottom: 22px;
+}
+
+/* Remember me and forgot password */
+.login-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin: 4px 0 26px;
+    font-size: 14px;
+}
+
+.remember-option {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #475569;
+    cursor: pointer;
+}
+
+.remember-option input {
+    width: 16px;
+    height: 16px;
+    accent-color: #2563EB;
+    cursor: pointer;
+}
+
+.forgot-password {
+    color: #2563EB;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.forgot-password:hover {
+    color: #1D4ED8;
+    text-decoration: underline;
+}
+
+/* Sign-in button */
+.register-submit {
+    width: 100%;
+    min-height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background: #2563EB;
+    color: #FFFFFF;
+    border: 1px solid #2563EB;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background-color 0.2s ease,
+                transform 0.2s ease;
+}
+
+.register-submit:hover {
+    background: #1D4ED8;
+    border-color: #1D4ED8;
+    color: #FFFFFF;
+}
+
+.register-submit:focus-visible,
+.forgot-password:focus-visible {
+    outline: 3px solid #93C5FD;
+    outline-offset: 3px;
+}
+
+/* Account role information */
+.login-role-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-top: 26px;
+    padding: 16px;
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 10px;
+    color: #475569;
+}
+
+.login-role-note > i {
+    color: #0D9488;
+    font-size: 20px;
+    margin-top: 2px;
+}
+
+.login-role-note strong {
+    display: block;
+    margin-bottom: 6px;
+    color: #172554;
+    font-size: 14px;
+}
+
+.login-role-note p {
+    margin: 0;
+    color: #64748B;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* Responsive layout */
+@media (max-width: 760px) {
+    .login-options {
+        font-size: 13px;
+    }
+
+    .login-role-note {
+        margin-top: 22px;
+    }
+}
+
+@media (max-width: 420px) {
+    .login-options {
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+}

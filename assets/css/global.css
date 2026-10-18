@@ -1,0 +1,27 @@
+:root {
+    --ef-primary: #2563EB;
+    --ef-navy: #172554;
+    --ef-teal: #0D9488;
+
+    --ef-background: #F8FAFC;
+    --ef-surface: #FFFFFF;
+
+    --ef-text: #0F172A;
+    --ef-text-secondary: #64748B;
+    --ef-border: #E2E8F0;
+
+    --ef-success: #15803D;
+    --ef-warning: #B45309;
+    --ef-error: #B91C1C;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: var(--ef-background);
+    color: var(--ef-text);
+}

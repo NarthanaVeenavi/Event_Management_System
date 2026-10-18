@@ -1,0 +1,493 @@
+
+/* =========================================
+   EventFlow - Registration Page
+   File: assets/css/register.css
+========================================= */
+
+/* Registration page layout */
+
+.register-page {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: minmax(320px, 0.9fr) minmax(500px, 1.1fr);
+    background: var(--ef-background);
+    color: var(--ef-text);
+}
+
+/* =========================================
+   LEFT PANEL - Branding and Features
+========================================= */
+
+.register-promo {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 42px clamp(28px, 4vw, 64px);
+    overflow: hidden;
+    color: var(--ef-surface);
+    background:
+        radial-gradient(
+            circle at 12% 85%,
+            rgba(13, 148, 136, 0.18),
+            transparent 38%
+        ),
+        linear-gradient(
+            145deg,
+            var(--ef-navy) 0%,
+            #1E3A70 100%
+        );
+}
+
+.promo-brand {
+    margin-bottom: 55px;
+}
+
+.promo-logo {
+    color: var(--ef-surface);
+    font-size: 28px;
+    font-weight: 750;
+    letter-spacing: -1px;
+}
+
+.promo-university {
+    margin-top: 7px;
+    color: #CBD5E1;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.promo-content {
+    width: 100%;
+    max-width: 490px;
+    margin: auto 0;
+}
+
+.promo-content h1 {
+    margin-bottom: 22px;
+    color: var(--ef-surface);
+    font-size: clamp(30px, 3vw, 44px);
+    font-weight: 750;
+    line-height: 1.22;
+    letter-spacing: -1.2px;
+}
+
+.promo-content h1 span {
+    color: #5EEAD4;
+}
+
+.promo-description {
+    max-width: 410px;
+    margin-bottom: 36px;
+    color: #CBD5E1;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+/* Feature list */
+
+.promo-features {
+    display: flex;
+    flex-direction: column;
+    gap: 23px;
+}
+
+.promo-feature {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.feature-icon {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.08);
+    color: #5EEAD4;
+    font-size: 21px;
+}
+
+.promo-feature h3 {
+    margin: 0 0 5px;
+    color: var(--ef-surface);
+    font-size: 14px;
+    font-weight: 650;
+}
+
+.promo-feature p {
+    margin: 0;
+    color: #CBD5E1;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.promo-footer {
+    margin-top: 45px;
+    color: #CBD5E1;
+    font-size: 11px;
+    letter-spacing: 0.3px;
+}
+
+/* =========================================
+   RIGHT PANEL - Registration Form
+========================================= */
+
+.register-form-section {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 32px;
+    background: var(--ef-surface);
+}
+
+.register-form-wrapper {
+    width: 100%;
+    max-width: 510px;
+    margin: auto 0;
+}
+
+/* Mobile-only branding */
+
+.mobile-brand {
+    display: none;
+}
+
+/* Form heading */
+
+.register-heading {
+    margin-bottom: 27px;
+}
+
+.register-heading h2 {
+    margin-bottom: 8px;
+    color: var(--ef-text);
+    font-size: 29px;
+    font-weight: 750;
+    letter-spacing: -0.8px;
+}
+
+.register-heading p {
+    margin: 0;
+    color: var(--ef-text-secondary);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+/* Form labels */
+
+.register-form .form-label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--ef-text);
+    font-size: 12px;
+    font-weight: 650;
+}
+
+.register-form .form-label span {
+    color: var(--ef-error);
+}
+
+/* Input fields and dropdowns */
+
+.register-form .form-control,
+.register-form .form-select {
+    width: 100%;
+    min-height: 44px;
+    border: 1px solid var(--ef-border);
+    border-radius: 8px;
+    background-color: var(--ef-surface);
+    color: var(--ef-text);
+    font-size: 13px;
+    box-shadow: none;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.register-form .form-control {
+    padding: 11px 13px;
+}
+
+.register-form .form-control::placeholder {
+    color: #94A3B8;
+    opacity: 1;
+}
+
+.register-form .form-control:focus,
+.register-form .form-select:focus {
+    border-color: var(--ef-primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+    outline: none;
+}
+
+/* Field spacing */
+
+.register-form .form-field {
+    margin-top: 17px;
+}
+
+/* Helper text */
+
+.form-hint {
+    margin-top: 7px;
+    color: var(--ef-text-secondary);
+    font-size: 10px;
+    line-height: 1.6;
+}
+
+/* Password requirements */
+
+.password-hint {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 8px;
+    color: var(--ef-success);
+    font-size: 10px;
+}
+
+.password-hint i {
+    font-size: 12px;
+}
+
+.password-error {
+    margin-top: 7px;
+    color: var(--ef-error);
+    font-size: 11px;
+}
+
+/* Terms and privacy agreement */
+
+.terms-field {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 21px;
+}
+
+.terms-field input {
+    flex-shrink: 0;
+    width: 15px;
+    height: 15px;
+    margin-top: 3px;
+    accent-color: var(--ef-primary);
+    cursor: pointer;
+}
+
+.terms-field label {
+    color: var(--ef-text-secondary);
+    font-size: 11px;
+    line-height: 1.8;
+}
+
+.terms-field a,
+.signin-prompt a,
+.support-footer a {
+    color: var(--ef-primary);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.terms-field a:hover,
+.signin-prompt a:hover,
+.support-footer a:hover {
+    text-decoration: underline;
+}
+
+/* Create account button */
+
+.register-submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    min-height: 47px;
+    margin-top: 21px;
+    border: 1px solid var(--ef-primary);
+    border-radius: 8px;
+    background: var(--ef-primary);
+    color: var(--ef-surface);
+    font-size: 13px;
+    font-weight: 650;
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.register-submit:hover,
+.register-submit:focus-visible {
+    border-color: #1D4ED8;
+    background: #1D4ED8;
+    color: var(--ef-surface);
+}
+
+.register-submit:focus-visible {
+    outline: 3px solid rgba(37, 99, 235, 0.2);
+    outline-offset: 2px;
+}
+
+.register-submit i {
+    font-size: 15px;
+}
+
+/* Organizer information */
+
+.organizer-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-top: 20px;
+    color: var(--ef-text-secondary);
+    font-size: 10px;
+    line-height: 1.8;
+}
+
+.organizer-note i {
+    margin-top: 2px;
+    color: var(--ef-teal);
+}
+
+/* Sign-in link */
+
+.signin-prompt {
+    margin-top: 21px;
+    color: var(--ef-text-secondary);
+    font-size: 12px;
+    text-align: center;
+}
+
+.signin-prompt a {
+    margin-left: 4px;
+}
+
+/* Support and copyright footer */
+
+.support-footer {
+    margin-top: 27px;
+    padding-top: 18px;
+    border-top: 1px solid var(--ef-border);
+    color: var(--ef-text-secondary);
+    font-size: 10px;
+    line-height: 1.8;
+    text-align: center;
+}
+
+.support-footer p {
+    margin: 8px 0 0;
+}
+
+/* Server-side validation alerts */
+
+.register-form-wrapper .alert {
+    margin-bottom: 20px;
+    border-radius: 8px;
+    font-size: 12px;
+}
+
+.register-form-wrapper .alert-danger {
+    border-color: #FECACA;
+    background: #FEF2F2;
+    color: var(--ef-error);
+}
+
+.register-form-wrapper .alert ul {
+    padding-left: 18px;
+}
+
+/* =========================================
+   RESPONSIVE LAYOUT
+========================================= */
+
+/* Tablets and smaller laptops */
+
+@media (max-width: 1000px) {
+    .register-page {
+        grid-template-columns:
+            minmax(280px, 0.8fr)
+            minmax(430px, 1.2fr);
+    }
+
+    .register-promo {
+        padding: 34px 28px;
+    }
+
+    .register-form-section {
+        padding: 34px 25px;
+    }
+
+    .promo-content h1 {
+        font-size: 32px;
+    }
+}
+
+/* Mobile devices */
+
+@media (max-width: 760px) {
+    .register-page {
+        grid-template-columns: 1fr;
+    }
+
+    .register-promo {
+        display: none;
+    }
+
+    .register-form-section {
+        justify-content: center;
+        padding: 28px 22px;
+    }
+
+    .register-form-wrapper {
+        max-width: 510px;
+    }
+
+    .mobile-brand {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        margin-bottom: 35px;
+    }
+
+    .mobile-brand span {
+        color: var(--ef-navy);
+        font-size: 25px;
+        font-weight: 750;
+    }
+
+    .mobile-brand small {
+        color: var(--ef-text-secondary);
+        font-size: 9px;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+    }
+
+    .register-heading h2 {
+        font-size: 26px;
+    }
+}
+
+/* Small mobile devices */
+
+@media (max-width: 420px) {
+    .register-form-section {
+        padding: 23px 16px;
+    }
+
+    .register-heading h2 {
+        font-size: 24px;
+    }
+
+    .register-form .form-control,
+    .register-form .form-select {
+        font-size: 12px;
+    }
+
+    .terms-field label {
+        font-size: 10px;
+    }
+}
