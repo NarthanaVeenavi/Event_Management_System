@@ -105,7 +105,7 @@ ob_start();
 
             <form
                 id="loginForm"
-                action=""
+                action="/EventFlow/login.php""
                 method="POST"
                 class="register-form"
             >

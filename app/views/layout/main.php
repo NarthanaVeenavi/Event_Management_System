@@ -27,16 +27,46 @@ $pageCss = $pageCss ?? '';
 
     <!-- Global CSS -->
     <link rel="stylesheet" href="/EventFlow/assets/css/global.css">
-    <!-- Shared authentication page styles -->
+
+    <?php
+    // Pages that use the dashboard layout.
+    $dashboardPages = [
+        'dashboard.css',
+        'profile.css',
+        'admin_dashboard.css',
+        'user_management.css',
+        'add_user.css',
+        'organizer_dashboard.css',
+        'create_event.css',
+    ];
+
+    // Allowed page-specific CSS files.
+    $allowedCss = [
+        'register.css',
+        'login.css',
+        'dashboard.css',
+        'profile.css',
+        'admin_dashboard.css',
+        'user_management.css',
+        'add_user.css',
+        'organizer_dashboard.css',
+        'create_event.css',
+    ];
+    ?>
+
+    <!-- Shared Dashboard CSS -->
+    <?php if (in_array($pageCss, $dashboardPages, true)): ?>
+        <link rel="stylesheet" href="/EventFlow/assets/css/sidebar.css">
+        <link rel="stylesheet" href="/EventFlow/assets/css/topbar.css">
+    <?php endif; ?>
+
+    <!-- Shared Authentication CSS -->
     <?php if ($pageCss === 'login.css'): ?>
-        <link
-            rel="stylesheet"
-            href="/EventFlow/assets/css/register.css"
-        >
+        <link rel="stylesheet" href="/EventFlow/assets/css/register.css">
     <?php endif; ?>
 
     <!-- Page-specific CSS -->
-    <?php if (in_array($pageCss, ['register.css', 'login.css'], true)): ?>
+    <?php if (in_array($pageCss, $allowedCss, true)): ?>
         <link
             rel="stylesheet"
             href="/EventFlow/assets/css/<?= htmlspecialchars(
@@ -49,8 +79,39 @@ $pageCss = $pageCss ?? '';
 </head>
 
 <body>
-    <?= $content ?>
 
+    <?php if (in_array($pageCss, $dashboardPages, true)): ?>
+
+        <!-- Dashboard Layout -->
+        <div class="dashboard-layout">
+
+            <?php require __DIR__ . '/sidebar.php'; ?>
+
+            <main class="dashboard-main">
+
+                <?php require __DIR__ . '/topbar.php'; ?>
+
+                <div class="dashboard-content">
+                    <?= $content ?>
+                </div>
+
+            </main>
+
+        </div>
+
+    <?php else: ?>
+
+        <!-- Authentication / Other Pages -->
+        <?= $content ?>
+
+    <?php endif; ?>
+
+    <!-- Bootstrap JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="/EventFlow/assets/js/theme.js"></script>
+    <script src="/EventFlow/assets/js/user.js"></script>
+
 </body>
 </html>

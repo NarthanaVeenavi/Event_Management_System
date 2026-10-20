@@ -1,6 +1,11 @@
+
 <?php
 $errors = $errors ?? [];
 $old = $old ?? [];
+$result = $result ?? [];
+
+$message = $result['message'] ?? '';
+$success = !empty($result['success']);
 
 function registerValue(string $key, array $old): string
 {
@@ -10,7 +15,6 @@ function registerValue(string $key, array $old): string
 $title = 'Create Account | EventFlow';
 $pageCss = 'register.css';
 
-// Start capturing the registration page HTML.
 ob_start();
 ?>
 
@@ -87,6 +91,15 @@ ob_start();
                 <p>Join your university’s community of curious minds.</p>
             </div>
 
+            <!-- SUCCESS MESSAGE -->
+            <?php if ($success && $message !== ''): ?>
+                <div class="alert alert-success" role="alert">
+                    <i class="bi bi-check-circle-fill me-2"></i>
+                    <?= htmlspecialchars($message, ENT_QUOTES, 'UTF-8') ?>
+                </div>
+            <?php endif; ?>
+
+            <!-- ERROR MESSAGES -->
             <?php if (!empty($errors)): ?>
                 <div class="alert alert-danger" role="alert">
                     <ul class="mb-0">
@@ -285,7 +298,7 @@ ob_start();
 
             <div class="signin-prompt">
                 Already have an account?
-                <a href="../auth/login.php">Sign in</a>
+                <a href="login.php">Sign in</a>
             </div>
 
             <div class="support-footer">
@@ -336,7 +349,6 @@ document.addEventListener('DOMContentLoaded', function () {
 </script>
 
 <?php
-// Capture the registration HTML and render it inside the shared layout.
 $content = ob_get_clean();
 
 require_once __DIR__ . '/../layout/main.php';

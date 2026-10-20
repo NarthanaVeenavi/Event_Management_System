@@ -15,13 +15,451 @@
     --ef-error: #B91C1C;
 }
 
+/* Global Reset */
 * {
     box-sizing: border-box;
 }
 
+html,
 body {
     margin: 0;
+    min-height: 100%;
+    width: 100%;
+}
+
+body {
     font-family: Arial, sans-serif;
     background: var(--ef-background);
     color: var(--ef-text);
+}
+
+* /* ========================================
+   EventFlow - Dark Theme
+======================================== */
+
+body[data-theme="dark"] {
+    background: #0F172A;
+    color: #E2E8F0;
+    color-scheme: dark;
+}
+
+body[data-theme="dark"] .dashboard-layout,
+body[data-theme="dark"] .dashboard-main,
+body[data-theme="dark"] .dashboard-content {
+    background: #0F172A;
+    color: #E2E8F0;
+}
+
+/* Sidebar */
+body[data-theme="dark"] .dashboard-sidebar {
+    background: #111827;
+    border-color: #334155;
+    color: #E2E8F0;
+}
+
+/* Fixed Topbar */
+body[data-theme="dark"] .dashboard-topbar {
+    background: #111827;
+    border-color: #334155;
+    color: #E2E8F0;
+}
+
+/* Cards and panels */
+body[data-theme="dark"] .stat-card,
+body[data-theme="dark"] .dashboard-card,
+body[data-theme="dark"] .welcome-card,
+body[data-theme="dark"] .help-card {
+    background: #1E293B;
+    border-color: #334155;
+    color: #E2E8F0;
+}
+
+/* Text */
+body[data-theme="dark"] h1,
+body[data-theme="dark"] h2,
+body[data-theme="dark"] h3,
+body[data-theme="dark"] h4,
+body[data-theme="dark"] .breadcrumb strong,
+body[data-theme="dark"] .university-name {
+    color: #F8FAFC;
+}
+
+body[data-theme="dark"] p,
+body[data-theme="dark"] .breadcrumb,
+body[data-theme="dark"] .text-muted {
+    color: #94A3B8;
+}
+
+/* Navigation */
+body[data-theme="dark"] .sidebar-nav a,
+body[data-theme="dark"] .sidebar-nav button {
+    color: #CBD5E1;
+}
+
+body[data-theme="dark"] .sidebar-nav a:hover,
+body[data-theme="dark"] .sidebar-nav a.active {
+    background: #1E3A5F;
+    color: #93C5FD;
+}
+
+/* Buttons and form controls */
+body[data-theme="dark"] .notification-button,
+body[data-theme="dark"] input,
+body[data-theme="dark"] select,
+body[data-theme="dark"] textarea {
+    background: #1E293B;
+    color: #E2E8F0;
+    border-color: #475569;
+}
+
+body[data-theme="dark"] input::placeholder,
+body[data-theme="dark"] textarea::placeholder {
+    color: #94A3B8;
+}
+
+/* Dividers */
+body[data-theme="dark"] hr,
+body[data-theme="dark"] .card-divider {
+    border-color: #334155;
+}
+
+/* Links */
+body[data-theme="dark"] a {
+    color: #93C5FD;
+}
+
+/* ========================================
+   Dark Theme - Dashboard Card Numbers
+======================================== */
+
+body[data-theme="dark"] .stat-card .stat-value,
+body[data-theme="dark"] .stat-card .stat-number,
+body[data-theme="dark"] .stat-card h2,
+body[data-theme="dark"] .stat-card h3,
+body[data-theme="dark"] .stat-card strong,
+body[data-theme="dark"] .dashboard-card .stat-value,
+body[data-theme="dark"] .dashboard-card .stat-number {
+    color: #F8FAFC !important;
+}
+
+/* Card labels and descriptions */
+body[data-theme="dark"] .stat-card .stat-label,
+body[data-theme="dark"] .stat-card p,
+body[data-theme="dark"] .dashboard-card .stat-label {
+    color: #CBD5E1 !important;
+}
+
+/* Ensure statistic cards have a dark background */
+body[data-theme="dark"] .stat-card,
+body[data-theme="dark"] .dashboard-card {
+    background-color: #1E293B;
+    border-color: #334155;
+}
+
+
+/* ==========================================
+   EventFlow - Dark Theme: Main Dashboard Panels
+========================================== */
+
+/* Main panel backgrounds */
+body[data-theme="dark"] .panel {
+    background: #1E293B !important;
+    color: #E2E8F0;
+    border-color: #334155 !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Panel headings */
+body[data-theme="dark"] .panel h2,
+body[data-theme="dark"] .panel h3,
+body[data-theme="dark"] .panel strong {
+    color: #F1F5F9;
+}
+
+/* Section labels */
+body[data-theme="dark"] .section-eyebrow {
+    color: #94A3B8;
+}
+
+/* Happening Today - Event highlight */
+body[data-theme="dark"] .event-highlight {
+    background: #172033 !important;
+    border-color: #334155 !important;
+}
+
+body[data-theme="dark"] .event-date-block {
+    background: #1D3557 !important;
+    color: #BFDBFE !important;
+}
+
+body[data-theme="dark"] .event-date-block span,
+body[data-theme="dark"] .event-date-block strong {
+    color: #BFDBFE !important;
+}
+
+body[data-theme="dark"] .event-highlight-info h3 {
+    color: #F8FAFC !important;
+}
+
+body[data-theme="dark"] .event-highlight-info p,
+body[data-theme="dark"] .event-id {
+    color: #CBD5E1 !important;
+}
+
+/* Attendance confirmation */
+body[data-theme="dark"] .checkin-success {
+    background: #12352E !important;
+    border-color: #226653 !important;
+}
+
+body[data-theme="dark"] .checkin-success strong {
+    color: #A7F3D0 !important;
+}
+
+body[data-theme="dark"] .checkin-success p,
+body[data-theme="dark"] .checkin-time {
+    color: #D1FAE5 !important;
+}
+
+/* Quick actions */
+body[data-theme="dark"] .quick-actions {
+    border-color: #334155 !important;
+}
+
+body[data-theme="dark"] .quick-actions > span {
+    color: #94A3B8 !important;
+}
+
+body[data-theme="dark"] .quick-action:not(.primary-action) {
+    background: #273449 !important;
+    color: #E2E8F0 !important;
+    border-color: #475569 !important;
+}
+
+/* Certificate panel */
+body[data-theme="dark"] .certificate-description,
+body[data-theme="dark"] .certificate-note {
+    color: #CBD5E1 !important;
+}
+
+body[data-theme="dark"] .certificate-preview {
+    background: #172033 !important;
+    border-color: #64748B !important;
+    color: #F8FAFC !important;
+}
+
+body[data-theme="dark"] .certificate-preview span,
+body[data-theme="dark"] .certificate-preview strong,
+body[data-theme="dark"] .certificate-preview small {
+    color: #E2E8F0 !important;
+}
+
+body[data-theme="dark"] .certificate-watermark {
+    color: #334155 !important;
+}
+
+/* Your Schedule - Registration table */
+body[data-theme="dark"] .registration-table-wrap {
+    background: #1E293B !important;
+}
+
+body[data-theme="dark"] .registration-table {
+    background: #1E293B !important;
+    color: #E2E8F0 !important;
+}
+
+body[data-theme="dark"] .registration-table thead {
+    background: #172033 !important;
+}
+
+body[data-theme="dark"] .registration-table th {
+    background: #172033 !important;
+    color: #94A3B8 !important;
+    border-color: #334155 !important;
+}
+
+body[data-theme="dark"] .registration-table td {
+    color: #CBD5E1 !important;
+    border-color: #334155 !important;
+}
+
+body[data-theme="dark"] .registration-table td strong,
+body[data-theme="dark"] .registration-event strong {
+    color: #F1F5F9 !important;
+}
+
+body[data-theme="dark"] .registration-event small,
+body[data-theme="dark"] .schedule-time {
+    color: #94A3B8 !important;
+}
+
+body[data-theme="dark"] .registration-event-icon {
+    background: #273449 !important;
+    color: #93C5FD !important;
+}
+
+body[data-theme="dark"] .table-pagination {
+    border-color: #334155 !important;
+    color: #94A3B8 !important;
+}
+
+body[data-theme="dark"] .table-pagination button {
+    background: #273449 !important;
+    color: #E2E8F0 !important;
+    border-color: #475569 !important;
+}
+
+body[data-theme="dark"] .table-pagination button:disabled {
+    color: #64748B !important;
+}
+
+/* Campus Updates - Announcements */
+body[data-theme="dark"] .announcement-empty {
+    background: #172033 !important;
+    border-color: #334155 !important;
+}
+
+body[data-theme="dark"] .announcement-empty strong {
+    color: #F1F5F9 !important;
+}
+
+body[data-theme="dark"] .announcement-empty p {
+    color: #CBD5E1 !important;
+}
+
+body[data-theme="dark"] .announcement-empty-icon {
+    background: #12352E !important;
+    color: #6EE7B7 !important;
+}
+
+body[data-theme="dark"] .announcement-help {
+    border-color: #334155 !important;
+    color: #93C5FD !important;
+}
+
+/* Footer */
+body[data-theme="dark"] .dashboard-footer {
+    color: #94A3B8 !important;
+}
+
+body[data-theme="dark"] .dashboard-footer i {
+    color: #FB7185;
+}
+body[data-theme="dark"] .profile-info strong {
+    color: #f8fafc;
+}
+/* Logout dropdown - Light theme */
+body[data-theme="light"] .profile-dropdown {
+    background: var(--sidebar-bg);
+    border-color: var(--border-color);
+}
+
+body[data-theme="light"] .profile-dropdown-item {
+    color: var(--text-primary);
+}
+
+body[data-theme="light"] .profile-dropdown-item:hover {
+    background: var(--hover-bg);
+    color: var(--text-primary);
+}
+
+/* Logout dropdown - Dark theme */
+body[data-theme="dark"] .profile-dropdown {
+    background: var(--sidebar-bg);
+    border-color: var(--border-color);
+}
+
+body[data-theme="dark"] .profile-dropdown-item {
+    color: var(--text-primary);
+}
+
+body[data-theme="dark"] .profile-dropdown-item:hover {
+    background: var(--hover-bg);
+    color: var(--text-primary);
+}
+
+
+body[data-theme="dark"] .dashboard-content {
+    background-color: #0F172A !important;
+    color: #F8FAFC !important;
+} 
+/* Dark Theme - Sidebar Help Card */
+body[data-theme="dark"] .sidebar-help {
+    background: #1E293B;
+    border-color: #334155;
+    color: #E2E8F0;
+}
+
+body[data-theme="dark"] .sidebar-help .help-icon {
+    background: #334155;
+    color: #93C5FD;
+}
+
+body[data-theme="dark"] .sidebar-help strong {
+    color: #F1F5F9;
+}
+
+body[data-theme="dark"] .sidebar-help p {
+    color: #94A3B8;
+}
+
+body[data-theme="dark"] .sidebar-help a {
+    color: #93C5FD;
+}
+
+body[data-theme="dark"] .sidebar-help a:hover {
+    color: #BFDBFE;
+}
+/* Dark Theme - Participant Portal */
+body[data-theme="dark"] .sidebar-portal {
+    background: #1E293B;
+    color: #CBD5E1;
+    border-color: #334155;
+}
+
+body[data-theme="dark"] .sidebar-portal .portal-dot {
+    background: #60A5FA;
+}
+
+/* Dark Theme - Active Sidebar Navigation */
+body[data-theme="dark"] .nav-item.active {
+    background: #1E3A5F;
+    color: #BFDBFE;
+    border-color: #2B4F75;
+}
+
+body[data-theme="dark"] .nav-item.active i {
+    color: #93C5FD;
+}
+
+/* Optional: Sidebar navigation hover */
+body[data-theme="dark"] .nav-item:hover {
+    background: #1E293B;
+    color: #E2E8F0;
+}
+
+body[data-theme="dark"] .sidebar-admin-overview {
+    background: #0F172A;
+    border-color: #334155;
+}
+
+body[data-theme="dark"] .sidebar-admin-overview strong {
+    color: #F1F5F9;
+}
+
+body[data-theme="dark"] .sidebar-admin-overview p {
+    color: #94A3B8;
+}
+
+body[data-theme="dark"] .admin-overview-icon {
+    background: #1E3A8A;
+    color: #BFDBFE;
+}
+
+body[data-theme="dark"] .profile-dropdown-item {
+    color: #CBD5E1;
+}
+
+body[data-theme="dark"] .profile-dropdown-item:hover {
+    background: #334155;
 }

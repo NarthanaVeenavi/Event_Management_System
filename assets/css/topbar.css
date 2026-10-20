@@ -1,0 +1,240 @@
+
+/* ========================================
+   EventFlow - Participant Topbar
+======================================== */
+
+.dashboard-main {
+    min-width: 0;
+    flex: 1;
+}
+
+/* Fixed topbar */
+
+.dashboard-topbar {
+    position: fixed !important;
+    top: 0 !important;
+    left: 260px;
+    right: 0;
+    width: auto;
+    height: 76px;
+    min-height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 16px 34px;
+    background: #FFFFFF;
+    border-bottom: 1px solid #E2E8F0;
+    box-sizing: border-box;
+    z-index: 1001;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    color: #64748B;
+    font-size: 12px;
+}
+
+.breadcrumb > i {
+    color: #CBD5E1;
+    font-size: 10px;
+}
+
+.breadcrumb strong {
+    color: #0F172A;
+    font-weight: 700;
+}
+
+/* Right-side topbar items */
+.topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* University name */
+.university-name {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #475569;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.university-name i {
+    color: #2563EB;
+    font-size: 17px;
+}
+
+/* Notification button */
+.notification-button {
+    position: relative;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #E2E8F0;
+    border-radius: 10px;
+    background: #FFFFFF;
+    color: #475569;
+    font-size: 17px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.notification-button:hover {
+    background: #F8FAFC;
+}
+
+/* Notification indicator */
+.notification-dot {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 7px;
+    height: 7px;
+    border: 1px solid #FFFFFF;
+    border-radius: 50%;
+    background: #EF4444;
+}
+
+/* User avatar */
+.topbar-avatar {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #DBEAFE;
+    color: #1D4ED8;
+    font-size: 12px;
+    font-weight: 750;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* ========================================
+   Responsive Topbar
+======================================== */
+
+/* Tablets */
+@media (max-width: 850px) and (min-width: 561px) {
+    .dashboard-topbar {
+        left: 220px;
+        padding: 15px 22px;
+    }
+
+    .topbar-right {
+        gap: 12px;
+    }
+}
+
+/* Mobile devices */
+@media (max-width: 560px) {
+    .dashboard-topbar {
+        left: 0;
+        right: 0;
+        height: auto;
+        min-height: 76px;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 14px;
+        padding: 16px;
+    }
+
+    .topbar-right {
+        width: 100%;
+        justify-content: flex-end;
+        gap: 12px;
+    }
+
+    .university-name {
+        margin-right: auto;
+        font-size: 11px;
+    }
+}
+
+
+/* Theme Toggle Button */
+.theme-toggle {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #E2E8F0;
+    border-radius: 10px;
+    background: #FFFFFF;
+    color: #475569;
+    font-size: 17px;
+    cursor: pointer;
+    transition: background-color 0.2s ease,
+                color 0.2s ease;
+}
+
+.theme-toggle:hover {
+    background: #F1F5F9;
+}
+
+/* Dark Theme Button */
+body[data-theme="dark"] .theme-toggle {
+    background: #1E293B;
+    color: #F8FAFC;
+    border-color: #334155;
+}
+
+body[data-theme="dark"] .theme-toggle:hover {
+    background: #334155;
+}
+.current-date {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-secondary, #64748b);
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.current-date i {
+    font-size: 14px;
+}
+
+.date-separator {
+    margin: 0 4px;
+    color: var(--border-color, #cbd5e1);
+}
+
+/* ================================
+   Current Date & Time - Dark Theme
+================================ */
+
+body[data-theme="dark"] .current-date {
+    color: #cbd5e1;
+}
+
+body[data-theme="dark"] .current-date i {
+    color: #94a3b8;
+}
+
+body[data-theme="dark"] .current-date .date-separator {
+    color: #475569;
+}
+
+/* Keep date and time readable */
+body[data-theme="dark"] #current-date,
+body[data-theme="dark"] #current-time {
+    color: #e2e8f0;
+}
+
+/* Optional hover effect */
+body[data-theme="dark"] .current-date:hover {
+    color: #f8fafc;
+}

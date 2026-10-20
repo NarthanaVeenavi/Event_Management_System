@@ -1,15 +1,20 @@
 <?php
 $servername = "localhost";
 $username = "root";
-$password = "root";  // <- put the password you set
-$dbname = "event_flow_db";
+$password = "root";
+$dbname = "eventflow_db"; // Match your SQL script
 
-// Create connection
-$conn = mysqli_connect($servername, $username, $password, $dbname);
+$conn = mysqli_connect(
+    $servername,
+    $username,
+    $password,
+    $dbname
+);
 
-// Check connection
 if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
+    error_log("Database connection failed: " . mysqli_connect_error());
+    die("Unable to connect to the database. Please try again later.");
 }
-// echo "Database connected successfully!";
+
+mysqli_set_charset($conn, "utf8mb4");
 ?>
