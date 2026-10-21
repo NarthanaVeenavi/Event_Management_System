@@ -477,3 +477,27 @@
 .dashboard-nav .nav-item.active i {
     color: #FFFFFF;
 }
+
+/* Profile avatar - dark theme */
+body[data-theme="dark"] .profile-avatar {
+    background: #1e293b;
+    color: #e2e8f0;
+    border: 1px solid #475569;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+    transition: background 0.2s ease, color 0.2s ease,
+                border-color 0.2s ease;
+}
+
+/* Avatar link hover */
+body[data-theme="dark"] .profile-avatar-link:hover .profile-avatar {
+    background: #334155;
+    color: #ffffff;
+    border-color: #64748b;
+}
+
+/* Keyboard accessibility */
+body[data-theme="dark"] .profile-avatar-link:focus-visible {
+    outline: 2px solid #60a5fa;
+    outline-offset: 3px;
+    border-radius: 50%;
+}

@@ -10,6 +10,7 @@ class EventController
     public function __construct(mysqli $conn)
     {
         $this->conn = $conn;
+        $this->eventModel = new Event($conn);
     }
 
     /**
@@ -158,5 +159,85 @@ class EventController
         $eventModel = new Event($this->conn);
 
         return $eventModel->getByOrganizer($organizerId);
+    }
+
+    public function getOrganizerEvent(
+        int $eventId,
+        int $organizerId
+    ): ?array {
+        if ($eventId <= 0 || $organizerId <= 0) {
+            throw new InvalidArgumentException(
+                'A valid event and organizer ID are required.'
+            );
+        }
+
+        return $this->eventModel->getByIdForOrganizer(
+            $eventId,
+            $organizerId
+        );
+    }
+
+    /**
+     * Retrieve events waiting for admin approval.
+     */
+    public function getPendingEvents(): array
+    {
+        return $this->eventModel->getPendingForApproval();
+    }
+
+    /**
+     * Retrieve event details for the admin review page.
+     */
+    public function getEventForReview(int $eventId): ?array
+    {
+        if ($eventId <= 0) {
+            throw new InvalidArgumentException(
+                'Invalid event ID.'
+            );
+        }
+
+        return $this->eventModel->getForAdminReview($eventId);
+    }
+
+    /**
+     * Approve or reject an event.
+     */
+    public function reviewEvent(
+        int $eventId,
+        int $adminId,
+        array $data
+    ): bool {
+        if ($eventId <= 0 || $adminId <= 0) {
+            throw new InvalidArgumentException(
+                'Invalid event or administrator ID.'
+            );
+        }
+
+        $decision = $data['decision'] ?? '';
+
+        if (!in_array($decision, ['Approved', 'Rejected'], true)) {
+            throw new InvalidArgumentException(
+                'Please select a valid decision.'
+            );
+        }
+
+        $reviewNote = trim((string) ($data['review_note'] ?? ''));
+        $rejectionReason = trim(
+            (string) ($data['rejection_reason'] ?? '')
+        );
+
+        if ($decision === 'Rejected' && $rejectionReason === '') {
+            throw new InvalidArgumentException(
+                'Please provide a reason for rejecting the event.'
+            );
+        }
+
+        return $this->eventModel->saveReview(
+            $eventId,
+            $adminId,
+            $decision,
+            $reviewNote !== '' ? $reviewNote : null,
+            $decision === 'Rejected' ? $rejectionReason : null
+        );
     }
 }

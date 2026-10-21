@@ -238,3 +238,24 @@ body[data-theme="dark"] #current-time {
 body[data-theme="dark"] .current-date:hover {
     color: #f8fafc;
 }
+
+/* Topbar avatar - dark theme */
+body[data-theme="dark"] .topbar-avatar {
+    background: #1e293b;
+    color: #e2e8f0;
+    border: 1px solid #475569;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+    transition: background 0.2s ease, color 0.2s ease,
+                border-color 0.2s ease;
+}
+
+body[data-theme="dark"] .topbar-avatar:hover {
+    background: #334155;
+    color: #ffffff;
+    border-color: #64748b;
+}
+
+body[data-theme="dark"] .topbar-avatar:focus-visible {
+    outline: 2px solid #60a5fa;
+    outline-offset: 3px;
+}

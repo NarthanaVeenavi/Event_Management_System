@@ -24,7 +24,7 @@ if ($isAdmin) {
         [
             'label' => 'Event approval',
             'icon' => 'bi-clipboard-check',
-            'url' => $basePath . 'admin/event-approvals.php',
+            'url' => $basePath . 'admin/event_approvals.php',
             'key' => 'event-approvals',
             'count' => 3
         ],
@@ -56,7 +56,7 @@ if ($isAdmin) {
         [
             'label' => 'Create event',
             'icon' => 'bi-plus-circle',
-            'url' => $basePath . 'organizer/create-event.php',
+            'url' => $basePath . 'organizer/create_event.php',
             'key' => 'create-event'
         ],
         [
@@ -245,6 +245,7 @@ if ($isAdmin) {
                     'events',
                     'manage-event',
                     'edit-event',
+                    'event_details',
                     'event-report'
                 ], true)
             ) {

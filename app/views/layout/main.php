@@ -38,6 +38,10 @@ $pageCss = $pageCss ?? '';
         'add_user.css',
         'organizer_dashboard.css',
         'create_event.css',
+        'events.css',
+        'event_details.css',
+        'event_approvals.css',
+        'event_review.css',
     ];
 
     // Allowed page-specific CSS files.
@@ -51,6 +55,10 @@ $pageCss = $pageCss ?? '';
         'add_user.css',
         'organizer_dashboard.css',
         'create_event.css',
+        'events.css',
+        'event_details.css',
+        'event_approvals.css',
+        'event_review.css',
     ];
     ?>
 
